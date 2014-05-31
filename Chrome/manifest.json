@@ -1,0 +1,16 @@
+{
+   "manifest_version": 2,
+   "background": {
+    "scripts": ["main.js", "parse-1.2.18.min.js"]
+   },
+   "description": "Send text straight to your phone!",
+   // "icons": {
+   //    "16": "icon16.png",
+   //    "48": "icon48.png"
+   // },
+   "minimum_chrome_version": "6",
+   "name": "Bearer",
+   "permissions": [ "contextMenus", "tabs" ],
+   "options_page": "options.html",
+   "version": "1.0"
+}

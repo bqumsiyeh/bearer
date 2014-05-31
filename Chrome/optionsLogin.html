@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <title>Login to Bearer</title>
+    <link href="../../bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="optionsLogin.css" rel="stylesheet">
+    <script src="jquery.min.js"></script>
+    <script src="parse-1.2.18.min.js"></script>
+    <script src="../../bootstrap-3.1.1/js/bootstrap.min.js"></script>
+    <script src="optionsLogin.js"></script>
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <form class="form-signin" role="form" id="loginForm" method="post">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="email" class="form-control" placeholder="Email address" id="usernameTF" required autofocus>
+        <input type="password" class="form-control" placeholder="Password" id="passwordTF" required>
+        <button type="submit" id="login_btn" data-loading-text="Logging In..." class="btn btn-lg btn-primary btn-block">Sign in</button>
+      </form>
+    </div> <!-- /container -->
+  </body>
+</html>
