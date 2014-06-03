@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
 
-@interface ReceivedContentTableViewController : UITableViewController<MFMessageComposeViewControllerDelegate>
+@interface ReceivedContentTableViewController : UIViewController<MFMessageComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *sentContentRecords;
+@property (nonatomic, strong) NSString *autoOpenRecordId;
+
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
 
 @end

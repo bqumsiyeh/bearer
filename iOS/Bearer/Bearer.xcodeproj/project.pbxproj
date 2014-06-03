@@ -34,6 +34,13 @@
 		FB490A1F1933BCEA003FECD1 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FB490A1E1933BCEA003FECD1 /* MBProgressHUD.m */; };
 		FB490A2219341E10003FECD1 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB490A2119341E10003FECD1 /* SignUpViewController.m */; };
 		FB490A29193438DB003FECD1 /* ReceivedContentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB490A28193438DB003FECD1 /* ReceivedContentTableViewController.m */; };
+		FB61D317193B020B00ECEF75 /* UIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FB61D316193B020B00ECEF75 /* UIUtils.m */; };
+		FB61D31A193B063800ECEF75 /* BearerTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = FB61D319193B063800ECEF75 /* BearerTextField.m */; };
+		FB61D31D193B0EA400ECEF75 /* bearer-gradient-background.png in Resources */ = {isa = PBXBuildFile; fileRef = FB61D31C193B0EA400ECEF75 /* bearer-gradient-background.png */; };
+		FB61D320193B145100ECEF75 /* BearerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FB61D31F193B145100ECEF75 /* BearerButton.m */; };
+		FB61D322193D9B1000ECEF75 /* bearer-gradient-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB61D321193D9B1000ECEF75 /* bearer-gradient-background@2x.png */; };
+		FB61D325193DA52600ECEF75 /* bearer-gradient-background2.png in Resources */ = {isa = PBXBuildFile; fileRef = FB61D323193DA52600ECEF75 /* bearer-gradient-background2.png */; };
+		FB61D326193DA52600ECEF75 /* bearer-gradient-background2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB61D324193DA52600ECEF75 /* bearer-gradient-background2@2x.png */; };
 		FBF73E07193453BD00C97CBE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF73E06193453BD00C97CBE /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +90,16 @@
 		FB490A2119341E10003FECD1 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		FB490A27193438DB003FECD1 /* ReceivedContentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceivedContentTableViewController.h; sourceTree = "<group>"; };
 		FB490A28193438DB003FECD1 /* ReceivedContentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceivedContentTableViewController.m; sourceTree = "<group>"; };
+		FB61D315193B020B00ECEF75 /* UIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUtils.h; sourceTree = "<group>"; };
+		FB61D316193B020B00ECEF75 /* UIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUtils.m; sourceTree = "<group>"; };
+		FB61D318193B063800ECEF75 /* BearerTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BearerTextField.h; sourceTree = "<group>"; };
+		FB61D319193B063800ECEF75 /* BearerTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BearerTextField.m; sourceTree = "<group>"; };
+		FB61D31C193B0EA400ECEF75 /* bearer-gradient-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bearer-gradient-background.png"; path = "images/bearer-gradient-background.png"; sourceTree = "<group>"; };
+		FB61D31E193B145100ECEF75 /* BearerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BearerButton.h; sourceTree = "<group>"; };
+		FB61D31F193B145100ECEF75 /* BearerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BearerButton.m; sourceTree = "<group>"; };
+		FB61D321193D9B1000ECEF75 /* bearer-gradient-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bearer-gradient-background@2x.png"; path = "images/bearer-gradient-background@2x.png"; sourceTree = "<group>"; };
+		FB61D323193DA52600ECEF75 /* bearer-gradient-background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bearer-gradient-background2.png"; path = "images/bearer-gradient-background2.png"; sourceTree = "<group>"; };
+		FB61D324193DA52600ECEF75 /* bearer-gradient-background2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bearer-gradient-background2@2x.png"; path = "images/bearer-gradient-background2@2x.png"; sourceTree = "<group>"; };
 		FBF73E06193453BD00C97CBE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -168,10 +185,17 @@
 				FB4909E119312176003FECD1 /* AppDelegate.h */,
 				FB4909E219312176003FECD1 /* AppDelegate.m */,
 				FB4909E419312176003FECD1 /* Main.storyboard */,
+				FB61D318193B063800ECEF75 /* BearerTextField.h */,
+				FB61D319193B063800ECEF75 /* BearerTextField.m */,
+				FB61D31E193B145100ECEF75 /* BearerButton.h */,
+				FB61D31F193B145100ECEF75 /* BearerButton.m */,
 				FB4909E719312176003FECD1 /* LoginViewController.h */,
 				FB4909E819312176003FECD1 /* LoginViewController.m */,
+				FB61D315193B020B00ECEF75 /* UIUtils.h */,
+				FB61D316193B020B00ECEF75 /* UIUtils.m */,
 				FB490A1D1933BCEA003FECD1 /* MBProgressHUD.h */,
 				FB490A1E1933BCEA003FECD1 /* MBProgressHUD.m */,
+				FB61D31B193B0E8000ECEF75 /* images */,
 				FB4909EA19312176003FECD1 /* Images.xcassets */,
 				FB4909D919312175003FECD1 /* Supporting Files */,
 				FB490A2019341E10003FECD1 /* SignUpViewController.h */,
@@ -209,6 +233,17 @@
 				FB4909FA19312176003FECD1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FB61D31B193B0E8000ECEF75 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				FB61D323193DA52600ECEF75 /* bearer-gradient-background2.png */,
+				FB61D324193DA52600ECEF75 /* bearer-gradient-background2@2x.png */,
+				FB61D321193D9B1000ECEF75 /* bearer-gradient-background@2x.png */,
+				FB61D31C193B0EA400ECEF75 /* bearer-gradient-background.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,8 +322,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB61D326193DA52600ECEF75 /* bearer-gradient-background2@2x.png in Resources */,
 				FB4909EB19312176003FECD1 /* Images.xcassets in Resources */,
 				FB4909DD19312175003FECD1 /* InfoPlist.strings in Resources */,
+				FB61D31D193B0EA400ECEF75 /* bearer-gradient-background.png in Resources */,
+				FB61D325193DA52600ECEF75 /* bearer-gradient-background2.png in Resources */,
+				FB61D322193D9B1000ECEF75 /* bearer-gradient-background@2x.png in Resources */,
 				FB4909E619312176003FECD1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,7 +351,10 @@
 				FB490A2219341E10003FECD1 /* SignUpViewController.m in Sources */,
 				FB490A29193438DB003FECD1 /* ReceivedContentTableViewController.m in Sources */,
 				FB4909E319312176003FECD1 /* AppDelegate.m in Sources */,
+				FB61D317193B020B00ECEF75 /* UIUtils.m in Sources */,
+				FB61D320193B145100ECEF75 /* BearerButton.m in Sources */,
 				FB4909DF19312175003FECD1 /* main.m in Sources */,
+				FB61D31A193B063800ECEF75 /* BearerTextField.m in Sources */,
 				FB490A1F1933BCEA003FECD1 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

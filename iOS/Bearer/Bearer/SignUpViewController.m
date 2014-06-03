@@ -31,6 +31,10 @@
 {
     [super viewDidLoad];
     
+    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bearer-gradient-background.png"]];
+    [self.view addSubview:background];
+    [self.view sendSubviewToBack:background];
+    
     UIGestureRecognizer *tapper = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self action:@selector(handleSingleTap:)];
     tapper.cancelsTouchesInView = NO;

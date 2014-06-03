@@ -3,10 +3,7 @@ chrome.contextMenus.create({title: "Send with Bearer", contexts:["selection", "l
 
 function startSendContent(info)
 {
- 	
- 	alert(info);
- 	return;
- 	var textToSend = info.selectionText;
+ 	var textToSend = getPreviewTextToPush(info);
  	
  	Parse.initialize("YBCBJjWoVxlTNYuuIVQkFbzNe1qNg9t063HNYSvj", "KPVpzyMz8gtxA16ZTe98z8jS7BDpwTIJznICYoaI");
 
@@ -21,6 +18,13 @@ function startSendContent(info)
  	}
 
  	
+}
+
+function getPreviewTextToPush(info) {
+	var t = info.selectionText;
+	if (t == null || t.length == 0)
+		t = info.pageUrl;
+	return t;
 }
 
 function createSentContentRecord (textToSend) {
@@ -41,7 +45,7 @@ function createSentContentRecord (textToSend) {
 	newSentContent.save(null, {
 	  success: function(sentContent) {
 	 	//now we can send the push!
-	    sendPush(textToSend);
+	    sendPush(textToSend, sentContent);
 	  },
 	  error: function(sentContent, error) {
 	    alert('Failed to create new object, with error code: ' + error.description);
@@ -49,7 +53,7 @@ function createSentContentRecord (textToSend) {
 	});
 }
 
-function sendPush(textToSend) {
+function sendPush(textToSend, sentContent) {
 	var currentUser = Parse.User.current();
 	if (!currentUser)
 		return;
@@ -60,6 +64,7 @@ function sendPush(textToSend) {
 	  where: query, // Set our Installation query
 	  data: {
 	    alert: textToSend,
+	    sentContentId:sentContent.id,
 	    sound: "default"
 	  }
 	}, {

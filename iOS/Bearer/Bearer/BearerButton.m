@@ -19,13 +19,16 @@
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+- (void) layoutSubviews {
+    [super layoutSubviews];
+    
+    self.titleLabel.textColor = [UIColor whiteColor];
+    
+    self.layer.borderWidth = 1.0f;
+    self.layer.cornerRadius = 3.0f;
+    UIColor *color = [UIColor colorWithRed:87/255.0f green:25/255.0f blue:185/255.0f alpha:1.0f];
+    self.layer.borderColor= color.CGColor;
+    self.backgroundColor = color;
 }
-*/
 
 @end

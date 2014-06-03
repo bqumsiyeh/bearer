@@ -10,4 +10,6 @@
 
 @interface UIUtils : NSObject
 
++ (CAGradientLayer*) loginGradient;
+
 @end

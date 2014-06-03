@@ -15,25 +15,27 @@
 @end
 
 @implementation ReceivedContentTableViewController
-@synthesize sentContentRecords;
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@synthesize sentContentRecords;
+@synthesize autoOpenRecordId;
+@synthesize tableView;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bearer-gradient-background2"]];
+    [self.view addSubview:background];
+    [self.view sendSubviewToBack:background];
+    
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(reloadDataFromParse) forControlEvents:UIControlEventValueChanged];
+    refreshControl.tintColor = [UIColor whiteColor];
     self.refreshControl = refreshControl;
+    [self.tableView addSubview:self.refreshControl];
     
+    self.tableView.backgroundView = nil;
+    self.tableView.backgroundColor = [UIColor clearColor];
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = @"Loading Data";
@@ -61,10 +63,7 @@
     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     [self.refreshControl endRefreshing];
     
-    if (!error) {
-        
-    }
-    else {
+    if (error) {
         NSString *errorString = [error userInfo][@"error"];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error loading data"
                                                         message:errorString
@@ -74,40 +73,65 @@
         [alert show];
     }
     
+    if (self.autoOpenRecordId) {
+        
+        for (PFObject *record in self.sentContentRecords) {
+            if ([record.objectId isEqualToString:self.autoOpenRecordId]) {
+                [self openContent:record];
+                break;
+            }
+            
+        }
+        
+        //clear
+        self.autoOpenRecordId = nil;
+    }
     [self.tableView reloadData];
     
 }
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return self.sentContentRecords.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.sentContentRecords.count;
+    return 1;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell1" forIndexPath:indexPath];
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell1" forIndexPath:indexPath];
     
-    PFObject *sentContent = [self.sentContentRecords objectAtIndex:indexPath.row];
+    PFObject *sentContent = [self.sentContentRecords objectAtIndex:indexPath.section];
     
     cell.textLabel.text = sentContent[@"text"];
+    
+    [cell.layer setCornerRadius:3.0f];
+    [cell.layer setMasksToBounds:YES];
     
     return cell;
 }
 
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 38.0f;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    PFObject *sentContent = [self.sentContentRecords objectAtIndex:indexPath.row];
-    if ([sentContent[@"type"] isEqualToString:@"SMS"]) {
+    PFObject *sentContent = [self.sentContentRecords objectAtIndex:indexPath.section];
+    [self openContent:sentContent];
+}
+
+#pragma mark - Opening content
+- (void) openContent:(PFObject *)sentContent {
+    if ([sentContent[@"route"] isEqualToString:@"SMS"]) {
         [self openSMS:sentContent];
     }
+    //TODO add more stuff here
 }
 
 - (void) openSMS:(PFObject *)sentContent {
@@ -124,6 +148,7 @@
     [self presentViewController:smsWindow animated:YES completion:NULL];
 }
 
+#pragma mark - SMS delegate
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult) result {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
