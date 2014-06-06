@@ -8,7 +8,9 @@
 
 #import "ReceivedContentTableViewController.h"
 #import "MBProgressHUD.h"
+#import "UIColor+Helpers.h"
 #import <Parse/Parse.h>
+#import "AppDelegate.h"
 
 @interface ReceivedContentTableViewController ()
 
@@ -23,6 +25,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self configureNavBar];
     
     UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bearer-gradient-background2"]];
     [self.view addSubview:background];
@@ -41,6 +45,23 @@
     hud.labelText = @"Loading Data";
     
     [self reloadDataFromParse];
+}
+
+- (void) configureNavBar {
+    self.title = @"Recieved Content";
+    self.navigationController.navigationBarHidden = NO;
+    self.navigationItem.backBarButtonItem = nil;
+    self.navigationController.navigationBar.barTintColor = [UIColor red:87 green:25 blue:185];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Test" style:UIBarButtonItemStylePlain
+                                                                            target:self action:@selector(menuBtnPressed)];
+}
+
+- (void)menuBtnPressed {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate.viewDeck toggleLeftViewAnimated:YES];
 }
 
 - (void) reloadDataFromParse {
@@ -103,19 +124,22 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell1" forIndexPath:indexPath];
+    cell.layer.borderColor = [UIColor blackColor].CGColor;
+    cell.layer.borderWidth = 1.0f;
+    cell.textLabel.font = [UIFont italicSystemFontOfSize:13.0f];
     
     PFObject *sentContent = [self.sentContentRecords objectAtIndex:indexPath.section];
-    
     cell.textLabel.text = sentContent[@"text"];
-    
-    [cell.layer setCornerRadius:3.0f];
-    [cell.layer setMasksToBounds:YES];
     
     return cell;
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 38.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 3.0f;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

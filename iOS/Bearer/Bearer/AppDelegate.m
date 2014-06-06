@@ -13,6 +13,7 @@
 @implementation AppDelegate
 
 @synthesize potentialSCId;
+@synthesize viewDeck;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

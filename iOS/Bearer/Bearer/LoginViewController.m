@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "MBProgressHUD.h"
 #import "AppDelegate.h"
+#import "IIViewDeckController.h"
 
 @interface LoginViewController ()
 
@@ -45,14 +46,32 @@
 }
 
 - (void) enterApp {
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
     UIViewController *sentContentVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"receivedContentTable"];
+    
+    UIViewController *menuVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"menu"];
+    
+    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:sentContentVC];
+    
+    
+    IIViewDeckController* deckController = [[IIViewDeckController alloc] initWithCenterViewController:nav
+                                                                                   leftViewController:menuVC
+                                                                                  rightViewController:nil];
+    
+    deckController.centerhiddenInteractivity = IIViewDeckCenterHiddenNotUserInteractiveWithTapToClose;
+    deckController.delegateMode = IIViewDeckDelegateAndSubControllers;
+    deckController.leftSize = 30.0f;
+    
+    appDelegate.viewDeck = deckController;
     
     [self.navigationController popViewControllerAnimated:NO];
     
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration: 0.65];
     [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.navigationController.view cache:YES];
-    [self.navigationController pushViewController:sentContentVC animated:NO];
+    [self.navigationController setViewControllers:[NSArray arrayWithObject:deckController] animated:NO];
     [UIView commitAnimations];
 }
 
