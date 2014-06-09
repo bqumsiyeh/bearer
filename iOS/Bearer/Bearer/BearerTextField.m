@@ -8,6 +8,7 @@
 
 #import "BearerTextField.h"
 #import <QuartzCore/QuartzCore.h>
+#import "UIColor+Helpers.h"
 
 @implementation BearerTextField
 
@@ -26,6 +27,12 @@
     if ([self respondsToSelector:@selector(setAttributedPlaceholder:)]) {
         UIColor *color = [UIColor lightTextColor];
         self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.placeholder attributes:@{NSForegroundColorAttributeName: color}];
+        
+        CALayer *bottomBorder = [CALayer layer];
+        bottomBorder.frame = CGRectMake(0.0f, self.frame.size.height-1.0f, self.frame.size.width, 1.0f);
+        color = [[UIColor lightTextColor] colorWithAlphaComponent:0.3];
+        bottomBorder.backgroundColor = color.CGColor;
+        [self.layer addSublayer:bottomBorder];
     }
 }
 - (void) layoutSubviews {
@@ -33,12 +40,6 @@
     
     self.borderStyle = UITextBorderStyleNone;
     self.backgroundColor = [UIColor clearColor];
-    
-    CALayer *bottomBorder = [CALayer layer];
-    bottomBorder.frame = CGRectMake(0.0f, self.frame.size.height-1.0f, self.frame.size.width, 1.0f);
-    UIColor *color = [UIColor lightTextColor];
-    bottomBorder.backgroundColor = color.CGColor;
-    [self.layer addSublayer:bottomBorder];
 //    self.layer.masksToBounds = NO;
 //    self.layer.cornerRadius = 1;
 //    self.layer.shadowOffset = CGSizeMake(0, 3);

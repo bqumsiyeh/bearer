@@ -11,6 +11,7 @@
 #import "UIColor+Helpers.h"
 #import <Parse/Parse.h>
 #import "AppDelegate.h"
+#import "BearerTableCell.h"
 
 @interface ReceivedContentTableViewController ()
 
@@ -28,13 +29,13 @@
     
     [self configureNavBar];
     
-    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bearer-gradient-background2"]];
-    [self.view addSubview:background];
-    [self.view sendSubviewToBack:background];
+    if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [self.tableView setSeparatorInset:UIEdgeInsetsZero];
+    }
     
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(reloadDataFromParse) forControlEvents:UIControlEventValueChanged];
-    refreshControl.tintColor = [UIColor whiteColor];
+    refreshControl.tintColor = [UIColor red:87 green:25 blue:185];
     self.refreshControl = refreshControl;
     [self.tableView addSubview:self.refreshControl];
     
@@ -48,15 +49,19 @@
 }
 
 - (void) configureNavBar {
-    self.title = @"Recieved Content";
+    self.title = @"Inbox";
     self.navigationController.navigationBarHidden = NO;
     self.navigationItem.backBarButtonItem = nil;
     self.navigationController.navigationBar.barTintColor = [UIColor red:87 green:25 blue:185];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Test" style:UIBarButtonItemStylePlain
-                                                                            target:self action:@selector(menuBtnPressed)];
+    UIImage *settingsImg = [AppDelegate symbolSetImgFromText:@"\U00002699" fontSize:20.0f color:[UIColor whiteColor]];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:settingsImg style:UIBarButtonItemStylePlain target:self action:@selector(menuBtnPressed)];
+    
+    [self.navigationController.navigationBar setBackgroundImage:nil
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = nil;
 }
 
 - (void)menuBtnPressed {
@@ -113,40 +118,33 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.sentContentRecords.count;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return self.sentContentRecords.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell1" forIndexPath:indexPath];
-    cell.layer.borderColor = [UIColor blackColor].CGColor;
-    cell.layer.borderWidth = 1.0f;
-    cell.textLabel.font = [UIFont italicSystemFontOfSize:13.0f];
+    BearerTableCell *cell = (BearerTableCell *)[self.tableView dequeueReusableCellWithIdentifier:@"cell1" forIndexPath:indexPath];
     
-    PFObject *sentContent = [self.sentContentRecords objectAtIndex:indexPath.section];
-    cell.textLabel.text = sentContent[@"text"];
+    PFObject *sentContent = [self.sentContentRecords objectAtIndex:indexPath.row];
+    [cell setSentContentRecord:sentContent];
     
     return cell;
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 38.0f;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 3.0f;
+    return 72.0f;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    PFObject *sentContent = [self.sentContentRecords objectAtIndex:indexPath.section];
+    PFObject *sentContent = [self.sentContentRecords objectAtIndex:indexPath.row];
     [self openContent:sentContent];
 }
 
@@ -155,7 +153,6 @@
     if ([sentContent[@"route"] isEqualToString:@"SMS"]) {
         [self openSMS:sentContent];
     }
-    //TODO add more stuff here
 }
 
 - (void) openSMS:(PFObject *)sentContent {
@@ -176,4 +173,5 @@
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult) result {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
+
 @end

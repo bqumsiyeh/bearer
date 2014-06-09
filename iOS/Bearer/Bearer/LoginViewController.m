@@ -66,6 +66,7 @@
     
     appDelegate.viewDeck = deckController;
     
+    self.navigationController.navigationBarHidden = YES;
     [self.navigationController popViewControllerAnimated:NO];
     
     [UIView beginAnimations:nil context:NULL];
@@ -107,7 +108,7 @@
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration: 0.65];
     [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.navigationController.view cache:YES];
-    [self.navigationController pushViewController:signUpVC animated:NO];
+    [self.navigationController setViewControllers:[NSArray arrayWithObject:signUpVC] animated:NO];
     [UIView commitAnimations];
 }
 @end

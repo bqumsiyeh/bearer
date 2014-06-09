@@ -31,9 +31,11 @@
 {
     [super viewDidLoad];
     
-    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bearer-gradient-background.png"]];
+    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bearer-gradient-background2.png"]];
     [self.view addSubview:background];
     [self.view sendSubviewToBack:background];
+    
+    [self setUpNavBar];
     
     UIGestureRecognizer *tapper = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self action:@selector(handleSingleTap:)];
@@ -41,6 +43,17 @@
     [self.view addGestureRecognizer:tapper];
 }
 
+- (void) setUpNavBar {
+    self.navigationController.navigationBarHidden = NO;
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                             forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"\U00002190" style:UIBarButtonItemStylePlain target:self action:@selector(backToLogin)];
+}
 - (void)handleSingleTap:(UITapGestureRecognizer *) sender {
     [self.view endEditing:YES];
 }
@@ -54,6 +67,20 @@
     [UIView setAnimationDuration: 0.65];
     [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.navigationController.view cache:YES];
     [self.navigationController pushViewController:sentContentVC animated:NO];
+    [UIView commitAnimations];
+}
+
+- (void) backToLogin {
+    
+    UIViewController *loginVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]
+                                 instantiateViewControllerWithIdentifier:@"logIn"];
+    
+    [self.navigationController popViewControllerAnimated:NO];
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration: 0.65];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.navigationController.view cache:YES];
+    [self.navigationController setViewControllers:[NSArray arrayWithObject:loginVC] animated:NO];
     [UIView commitAnimations];
 }
 

@@ -15,4 +15,6 @@
 @property (strong, nonatomic) NSString *potentialSCId;
 @property (weak, nonatomic) IIViewDeckController *viewDeck;
 
++ (UIImage *)symbolSetImgFromText:(NSString *)text fontSize:(CGFloat)fontSize color:(UIColor *)color;
+
 @end

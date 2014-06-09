@@ -7,6 +7,7 @@
 //
 
 #import "BearerButton.h"
+#import "UIColor+Helpers.h"
 
 @implementation BearerButton
 
@@ -24,10 +25,8 @@
     
     self.titleLabel.textColor = [UIColor whiteColor];
     
-    self.layer.borderWidth = 1.0f;
     self.layer.cornerRadius = 3.0f;
-    UIColor *color = [UIColor colorWithRed:87/255.0f green:25/255.0f blue:185/255.0f alpha:1.0f];
-    self.layer.borderColor= color.CGColor;
+    UIColor *color = [UIColor red:132 green:3 blue:252];
     self.backgroundColor = color;
 }
 
