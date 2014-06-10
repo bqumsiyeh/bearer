@@ -1,5 +1,10 @@
 
-chrome.contextMenus.create({title: "Send with Bearer", contexts:["selection", "link", "page"], onclick: startSendContent});
+chrome.contextMenus.create({title: "Send with Bearer", contexts:["selection", "link", "page"], onclick: openPopup});
+
+function openPopup(info) {
+	
+	$('#myModal').modal('show');
+}
 
 function startSendContent(info)
 {
