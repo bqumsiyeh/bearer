@@ -31,7 +31,7 @@
         return;
     }
     
-    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bearer-gradient-background2"]];
+    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"colorBackground.png"]];
     [self.view addSubview:background];
     [self.view sendSubviewToBack:background];
     
@@ -74,6 +74,11 @@
     [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.navigationController.view cache:YES];
     [self.navigationController setViewControllers:[NSArray arrayWithObject:deckController] animated:NO];
     [UIView commitAnimations];
+    
+    //re-register the device with the user when entering the app!
+    PFUser *curr = [PFUser currentUser];
+    curr[@"registeredDevice"] = [PFInstallation currentInstallation];
+    [curr saveInBackground];
 }
 
 //Email = username

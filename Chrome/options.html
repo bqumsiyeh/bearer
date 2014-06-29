@@ -1,16 +1,62 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>My Test Extension Options</title>
+		<title>Bearer - Options</title>
 
 		<link href="../../bootstrap-3.1.1/css/bootstrap.min.css" rel="stylesheet">
+		<link href="options.css" rel="stylesheet">
+
 		<script src="jquery.min.js"></script>
 		<script src="parse-1.2.18.min.js"></script>
   		<script src="options.js"></script>
+  		<script src="moment.min.js"></script>
 	</head>
 	<body>
+
+		<div id="topRightView" align="right">
+			<p id="username"></p>
+			<button type="button" id="logout_btn" class="btn btn-link">Log out</button>
+		</div>
+
+		<br><br>
 		<p id="topMsg"></p>
 		<br>
-		<button type="button" id="logout_btn" class="btn btn-primary">Log out</button>
+
+		<p id="deviceTitle" align="center">Registered Device</p>
+
+		<div id="tableContainer1">
+
+			<div id="spinner1" class="spinner" style="display:none;" align="center">
+    			<img id="img-spinner" src="spinner.gif" alt="Loading"/>
+			</div>
+
+			<table class="table table-condensed" align="center" id="deviceTable">
+				<tr>
+					<th>Device Name</th>
+					<th>Device Type</th> 
+				</tr>
+			</table>
+		</div>
+
+		<br><br><br>
+
+		<p id="contentTitle" align="center">Most Recently Sent Content</p>
+		<div id="tableContainer2">
+			<div id="spinner2" class="spinner" style="display:none;" align="center">
+	    		<img id="img-spinner" src="spinner.gif" alt="Loading"/>
+			</div>
+			<div style="height:auto;overflow:none;">
+				<table class="table table-condensed" align="center" id="contentTable">
+				    <colgroup>
+				    	<col span="1" style="width: 75%;">
+				       	<col span="1" style="width: 25%;">
+				    </colgroup>
+					<tr>
+						<th>Text sent</th>
+						<th>Date sent</th> 
+					</tr>
+				</table>
+			</div>
+		</div>
 	</body>
 </html>

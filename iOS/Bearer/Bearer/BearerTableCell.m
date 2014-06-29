@@ -35,7 +35,7 @@
 - (void) setSentContentRecord:(PFObject *)sentContentRecord2 {
     sentContentRecord = sentContentRecord2;
     
-    self.mainLabel.text = self.sentContentRecord[@"text"];
+    self.mainLabel.text = [NSString stringWithFormat:@"\"%@\"", self.sentContentRecord[@"text"]];
     
     NSString *timeStr = [self timeAgoFromDate:self.sentContentRecord.createdAt];
     self.timeLabel.text = timeStr;

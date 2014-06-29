@@ -1,9 +1,9 @@
 {
    "manifest_version": 2,
    "background": {
-    "scripts": ["main.js", "parse-1.2.18.min.js", "jquery.min.js", "bootstrap-3.1.1/js/bootstrap.min.js"]
+      "scripts": ["jquery.min.js", "bootstrap-3.1.1/js/bootstrap.min.js", "parse-1.2.18.min.js", "moment.min.js", "main.js"]
    },
-   "description": "Send text straight to your phone!",
+   "description": "Send content to your mobile devices!",
    // "icons": {
    //    "16": "icon16.png",
    //    "48": "icon48.png"

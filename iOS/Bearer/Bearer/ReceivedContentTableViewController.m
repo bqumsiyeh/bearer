@@ -35,7 +35,7 @@
     
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(reloadDataFromParse) forControlEvents:UIControlEventValueChanged];
-    refreshControl.tintColor = [UIColor red:87 green:25 blue:185];
+    refreshControl.tintColor = [UIColor red:37 green:103 blue:16];
     self.refreshControl = refreshControl;
     [self.tableView addSubview:self.refreshControl];
     
@@ -52,7 +52,7 @@
     self.title = @"Inbox";
     self.navigationController.navigationBarHidden = NO;
     self.navigationItem.backBarButtonItem = nil;
-    self.navigationController.navigationBar.barTintColor = [UIColor red:87 green:25 blue:185];
+    self.navigationController.navigationBar.barTintColor = [UIColor red:37 green:103 blue:16];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     

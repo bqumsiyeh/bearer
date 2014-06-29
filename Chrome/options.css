@@ -1,0 +1,73 @@
+body {
+	background: #6F38CC;
+}
+
+p {
+	color: white;
+}
+
+table {
+	background-color: white;
+	/*color: #6F38CC;*/
+}
+
+#topRightView {
+	border-radius: 7px;
+	width: 400px;
+	background-color: white;
+	text-align: right;
+	margin-top: -7px;
+	margin-right: 5px;
+	padding-left: 10px;
+	height:50px;
+	float: right;
+	position:relative;
+}
+
+#logout_btn {
+	position:absolute;
+	bottom:0;
+	right:6px;
+	padding-bottom: 10px;
+}
+#username {
+	/*display: inline-block;*/
+	color: black;
+	float: left;
+	position:absolute;
+	bottom:0;
+}
+
+#deviceTitle, #contentTitle {
+	font-size: 1.5em
+}
+#deviceTable {
+	width: 600px;
+}
+
+#contentTable {
+	width: 700px;
+}
+
+#tableContainer1 {
+	width:630px;
+	margin: 0 auto;
+	background-color: white;
+	border-radius: 10px;
+	padding-top: 15px;
+	padding-bottom: 5px;
+	border-style:solid;
+	border-width:3px;
+}
+
+#tableContainer2 {
+	width:730px;
+	margin: 0 auto;
+	background-color: white;
+	border-radius: 10px;
+	padding-top: 15px;
+	padding-bottom: 5px;
+	border-style:solid;
+	border-width:3px;
+	margin-bottom: 10px;
+}

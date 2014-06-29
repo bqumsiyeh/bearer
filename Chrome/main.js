@@ -1,10 +1,5 @@
 
-chrome.contextMenus.create({title: "Send with Bearer", contexts:["selection", "link", "page"], onclick: openPopup});
-
-function openPopup(info) {
-	
-	$('#myModal').modal('show');
-}
+ chrome.contextMenus.create({title: "Send with Bearer", contexts:["selection", "link", "page"], onclick: startSendContent});
 
 function startSendContent(info)
 {
@@ -33,7 +28,7 @@ function getPreviewTextToPush(info) {
 }
 
 function createSentContentRecord (textToSend) {
-
+	alert("a");
 	var currentUser = Parse.User.current();
 	if (!currentUser)
 		return;
@@ -63,8 +58,9 @@ function sendPush(textToSend, sentContent) {
 	if (!currentUser)
 		return;
 
+	alert("about to send");
 	var query = new Parse.Query(Parse.Installation);
-	query.equalTo("user", currentUser);
+	query.equalTo("objectId", currentUser["registeredDevice"]);
 	Parse.Push.send({
 	  where: query, // Set our Installation query
 	  data: {

@@ -23,11 +23,13 @@
 - (void) layoutSubviews {
     [super layoutSubviews];
     
-    self.titleLabel.textColor = [UIColor whiteColor];
+    self.layer.cornerRadius = 4.0f;
+    self.layer.borderWidth = 1.5f;
     
-    self.layer.cornerRadius = 3.0f;
-    UIColor *color = [UIColor red:132 green:3 blue:252];
-    self.backgroundColor = color;
+    self.titleLabel.font = [UIFont boldSystemFontOfSize:15.0];
+    self.titleLabel.textColor = [UIColor whiteColor];
+    self.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.backgroundColor = [UIColor red:37 green:103 blue:16];
 }
 
 @end

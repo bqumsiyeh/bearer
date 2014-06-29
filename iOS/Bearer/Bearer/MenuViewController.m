@@ -30,7 +30,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bearer-gradient-background2"]];
+    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"colorBackground.png"]];
     [self.view addSubview:background];
     [self.view sendSubviewToBack:background];
 }

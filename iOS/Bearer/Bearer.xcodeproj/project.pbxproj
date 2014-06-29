@@ -36,17 +36,14 @@
 		FB490A29193438DB003FECD1 /* ReceivedContentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB490A28193438DB003FECD1 /* ReceivedContentTableViewController.m */; };
 		FB61D317193B020B00ECEF75 /* UIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FB61D316193B020B00ECEF75 /* UIUtils.m */; };
 		FB61D31A193B063800ECEF75 /* BearerTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = FB61D319193B063800ECEF75 /* BearerTextField.m */; };
-		FB61D31D193B0EA400ECEF75 /* bearer-gradient-background.png in Resources */ = {isa = PBXBuildFile; fileRef = FB61D31C193B0EA400ECEF75 /* bearer-gradient-background.png */; };
 		FB61D320193B145100ECEF75 /* BearerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FB61D31F193B145100ECEF75 /* BearerButton.m */; };
-		FB61D322193D9B1000ECEF75 /* bearer-gradient-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB61D321193D9B1000ECEF75 /* bearer-gradient-background@2x.png */; };
-		FB61D325193DA52600ECEF75 /* bearer-gradient-background2.png in Resources */ = {isa = PBXBuildFile; fileRef = FB61D323193DA52600ECEF75 /* bearer-gradient-background2.png */; };
-		FB61D326193DA52600ECEF75 /* bearer-gradient-background2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB61D324193DA52600ECEF75 /* bearer-gradient-background2@2x.png */; };
 		FB61D329193EEBCC00ECEF75 /* UIColor+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = FB61D328193EEBCC00ECEF75 /* UIColor+Helpers.m */; };
 		FB61D331193EEDF900ECEF75 /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB61D32C193EEDF900ECEF75 /* IISideController.m */; };
 		FB61D332193EEDF900ECEF75 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB61D32E193EEDF900ECEF75 /* IIViewDeckController.m */; };
 		FB61D333193EEDF900ECEF75 /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB61D330193EEDF900ECEF75 /* IIWrapController.m */; };
 		FB61D336194158E000ECEF75 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB61D335194158E000ECEF75 /* MenuViewController.m */; };
-		FB61D3381941809A00ECEF75 /* testLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = FB61D3371941809A00ECEF75 /* testLogo.png */; };
+		FBB59C64195F055900EE3A05 /* colorBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = FBB59C63195F055900EE3A05 /* colorBackground.png */; };
+		FBC4B872195CEA4200497D98 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FBC4B870195CEA4200497D98 /* logo.png */; };
 		FBCA2B571945137F00AED18A /* ss-standard.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FBCA2B561945137F00AED18A /* ss-standard.ttf */; };
 		FBCA2B5A19451D1C00AED18A /* BearerTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCA2B5919451D1C00AED18A /* BearerTableCell.m */; };
 		FBCA2B5C194525E200AED18A /* copy.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCA2B5B194525E200AED18A /* copy.png */; };
@@ -68,10 +65,9 @@
 		FB4909D219312175003FECD1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FB4909D419312175003FECD1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FB4909D619312175003FECD1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		FB4909DA19312175003FECD1 /* Bearer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Bearer-Info.plist"; sourceTree = "<group>"; };
 		FB4909DC19312175003FECD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FB4909DE19312175003FECD1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FB4909E019312176003FECD1 /* Bearer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bearer-Prefix.pch"; sourceTree = "<group>"; };
+		FB4909E019312176003FECD1 /* Bear.it-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bear.it-Prefix.pch"; sourceTree = "<group>"; };
 		FB4909E119312176003FECD1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FB4909E219312176003FECD1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FB4909E519312176003FECD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,12 +99,8 @@
 		FB61D316193B020B00ECEF75 /* UIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUtils.m; sourceTree = "<group>"; };
 		FB61D318193B063800ECEF75 /* BearerTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BearerTextField.h; sourceTree = "<group>"; };
 		FB61D319193B063800ECEF75 /* BearerTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BearerTextField.m; sourceTree = "<group>"; };
-		FB61D31C193B0EA400ECEF75 /* bearer-gradient-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bearer-gradient-background.png"; path = "images/bearer-gradient-background.png"; sourceTree = "<group>"; };
 		FB61D31E193B145100ECEF75 /* BearerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BearerButton.h; sourceTree = "<group>"; };
 		FB61D31F193B145100ECEF75 /* BearerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BearerButton.m; sourceTree = "<group>"; };
-		FB61D321193D9B1000ECEF75 /* bearer-gradient-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bearer-gradient-background@2x.png"; path = "images/bearer-gradient-background@2x.png"; sourceTree = "<group>"; };
-		FB61D323193DA52600ECEF75 /* bearer-gradient-background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bearer-gradient-background2.png"; path = "images/bearer-gradient-background2.png"; sourceTree = "<group>"; };
-		FB61D324193DA52600ECEF75 /* bearer-gradient-background2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bearer-gradient-background2@2x.png"; path = "images/bearer-gradient-background2@2x.png"; sourceTree = "<group>"; };
 		FB61D327193EEBCC00ECEF75 /* UIColor+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Helpers.h"; sourceTree = "<group>"; };
 		FB61D328193EEBCC00ECEF75 /* UIColor+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Helpers.m"; sourceTree = "<group>"; };
 		FB61D32B193EEDF900ECEF75 /* IISideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IISideController.h; sourceTree = "<group>"; };
@@ -119,7 +111,9 @@
 		FB61D330193EEDF900ECEF75 /* IIWrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIWrapController.m; sourceTree = "<group>"; };
 		FB61D334194158E000ECEF75 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		FB61D335194158E000ECEF75 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
-		FB61D3371941809A00ECEF75 /* testLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = testLogo.png; path = images/testLogo.png; sourceTree = "<group>"; };
+		FBB59C61195EE5BB00EE3A05 /* Bearer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Bearer-Info.plist"; sourceTree = "<group>"; };
+		FBB59C63195F055900EE3A05 /* colorBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = colorBackground.png; path = images/colorBackground.png; sourceTree = "<group>"; };
+		FBC4B870195CEA4200497D98 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = images/logo.png; sourceTree = "<group>"; };
 		FBCA2B561945137F00AED18A /* ss-standard.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ss-standard.ttf"; sourceTree = "<group>"; };
 		FBCA2B5819451D1C00AED18A /* BearerTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BearerTableCell.h; sourceTree = "<group>"; };
 		FBCA2B5919451D1C00AED18A /* BearerTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BearerTableCell.m; sourceTree = "<group>"; };
@@ -241,10 +235,10 @@
 			isa = PBXGroup;
 			children = (
 				FBCA2B561945137F00AED18A /* ss-standard.ttf */,
-				FB4909DA19312175003FECD1 /* Bearer-Info.plist */,
+				FBB59C61195EE5BB00EE3A05 /* Bearer-Info.plist */,
 				FB4909DB19312175003FECD1 /* InfoPlist.strings */,
 				FB4909DE19312175003FECD1 /* main.m */,
-				FB4909E019312176003FECD1 /* Bearer-Prefix.pch */,
+				FB4909E019312176003FECD1 /* Bear.it-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -270,12 +264,9 @@
 		FB61D31B193B0E8000ECEF75 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				FBB59C63195F055900EE3A05 /* colorBackground.png */,
+				FBC4B870195CEA4200497D98 /* logo.png */,
 				FBCA2B5B194525E200AED18A /* copy.png */,
-				FB61D3371941809A00ECEF75 /* testLogo.png */,
-				FB61D323193DA52600ECEF75 /* bearer-gradient-background2.png */,
-				FB61D324193DA52600ECEF75 /* bearer-gradient-background2@2x.png */,
-				FB61D321193D9B1000ECEF75 /* bearer-gradient-background@2x.png */,
-				FB61D31C193B0EA400ECEF75 /* bearer-gradient-background.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -369,14 +360,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB61D3381941809A00ECEF75 /* testLogo.png in Resources */,
-				FB61D326193DA52600ECEF75 /* bearer-gradient-background2@2x.png in Resources */,
 				FB4909EB19312176003FECD1 /* Images.xcassets in Resources */,
 				FB4909DD19312175003FECD1 /* InfoPlist.strings in Resources */,
-				FB61D31D193B0EA400ECEF75 /* bearer-gradient-background.png in Resources */,
-				FB61D325193DA52600ECEF75 /* bearer-gradient-background2.png in Resources */,
+				FBB59C64195F055900EE3A05 /* colorBackground.png in Resources */,
+				FBC4B872195CEA4200497D98 /* logo.png in Resources */,
 				FBCA2B5C194525E200AED18A /* copy.png in Resources */,
-				FB61D322193D9B1000ECEF75 /* bearer-gradient-background@2x.png in Resources */,
 				FB4909E619312176003FECD1 /* Main.storyboard in Resources */,
 				FBCA2B571945137F00AED18A /* ss-standard.ttf in Resources */,
 			);
@@ -544,7 +532,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bearer/Bearer-Prefix.pch";
 				INFOPLIST_FILE = "Bearer/Bearer-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Bearer;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -562,7 +550,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bearer/Bearer-Prefix.pch";
 				INFOPLIST_FILE = "Bearer/Bearer-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Bearer;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -583,7 +571,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "BearerTests/BearerTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BearerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -601,7 +589,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bearer/Bearer-Prefix.pch";
 				INFOPLIST_FILE = "BearerTests/BearerTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BearerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
